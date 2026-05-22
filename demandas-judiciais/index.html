@@ -3,15 +3,22 @@
 <head>
     <meta charset="utf-8">
     <title>Minha Apresentação</title>
-    <!-- Carrega o visual do Reveal.js via internet (CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/dracula.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Principal do Reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    
+    <!-- Tema da apresentação (Dracula) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/dracula.css">
+    
+    <!-- CSS para deixar o código colorido (Tema Monokai) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <!-- Aqui é onde a mágica acontece: ele puxa o seu slides.md -->
+            <!-- Puxa o seu slides.md -->
             <section data-markdown="slides.md"
                      data-separator="^\n---\n$"
                      data-separator-vertical="^\n--\n$">
@@ -19,14 +26,17 @@
         </div>
     </div>
 
-    <!-- Carrega os scripts do Reveal.js via internet (CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+    <!-- Scripts principais do Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <!-- Plugin para ler Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <!-- Plugin para colorir códigos -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
     
     <script>
-        // Inicia a apresentação
+        // Inicia a apresentação com os dois plugins ativados
         Reveal.initialize({
-            plugins: [ RevealMarkdown ]
+            plugins: [ RevealMarkdown, RevealHighlight ]
         });
     </script>
 </body>
