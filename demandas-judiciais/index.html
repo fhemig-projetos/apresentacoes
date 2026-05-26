@@ -1,43 +1,221 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <title>Minha Apresentação</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
 
-    <!-- CSS Principal do Reveal.js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
-    
-    <!-- Tema da apresentação (Dracula) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/dracula.css">
-    
-    <!-- CSS para deixar o código colorido (Tema Monokai) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
-</head>
-<body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Automação de Demandas Judiciais</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Reveal.js -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css"
+    />
+
+    <!-- Tema -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css"
+    />
+
+    <!-- Highlight.js -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css"
+    />
+
+    <!-- Customizações -->
+
+    <style>
+      :root {
+        --r-heading-color: #1296cc;
+        --r-link-color: #0f8fc2;
+        --r-selection-background-color: #d9f1fb;
+      }
+
+      body {
+        background-color: #f8fafc;
+      }
+
+      .reveal {
+        font-size: 30px;
+      }
+
+      .reveal .slides {
+        text-align: left;
+      }
+
+      /* =========================
+         TITULOS
+      ========================== */
+
+      .reveal h1 {
+        color: #1296cc;
+        font-weight: 700;
+        font-size: 1.6em;
+        margin-bottom: 30px;
+      }
+
+      .reveal h2 {
+        color: #169fd8;
+        font-weight: 600;
+        font-size: 1em;
+      }
+
+      .reveal h3 {
+        color: #38b6e8;
+        font-weight: 600;
+        font-size: 0.8em;
+      }
+
+      /* =========================
+         TEXTO
+      ========================== */
+
+      .reveal p,
+      .reveal li {
+        line-height: 1.5;
+      }
+
+      .reveal ul li,
+      .reveal ol li {
+        margin-bottom: 12px;
+      }
+
+      .reveal strong {
+        color: #0f8fc2;
+      }
+
+      /* =========================
+         BLOCKQUOTE
+      ========================== */
+
+      .reveal blockquote {
+        background: #eef8fc;
+        border-left: 6px solid #1296cc;
+        padding: 20px;
+        border-radius: 12px;
+        width: 100%;
+        box-shadow: none;
+      }
+
+      /* =========================
+         TABELAS
+      ========================== */
+
+      .reveal table {
+        margin-top: 20px;
+        font-size: 0.75em;
+      }
+
+      .reveal table th {
+        background-color: #d9f1fb;
+        color: #0f8fc2;
+      }
+
+      .reveal table td,
+      .reveal table th {
+        border: 1px solid #cbd5e1;
+        padding: 12px;
+      }
+
+      /* =========================
+         MERMAID
+      ========================== */
+
+      .mermaid {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .mermaid svg {
+        max-width: 100%;
+        max-height: 500px;
+      }
+
+      /* =========================
+         LOGO FHEMIG
+      ========================== */
+
+      .fhemig-logo {
+        position: fixed;
+        top: 18px;
+        right: 28px;
+        width: 130px;
+        z-index: 30;
+        opacity: 0.92;
+      }
+
+      /* =========================
+         AJUSTES GERAIS
+      ========================== */
+
+      .reveal .slides section {
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Logo fixa -->
+
+    <img
+      src="logo-fhemig.png"
+      alt="Logo FHEMIG"
+      class="fhemig-logo"
+    />
+
+    <!-- Slides -->
+
     <div class="reveal">
-        <div class="slides">
-            <!-- Puxa o seu slides.md -->
-            <section data-markdown="slides.md"
-                     data-separator="^\n---\n$"
-                     data-separator-vertical="^\n--\n$">
-            </section>
-        </div>
+      <div class="slides">
+        <section
+          data-markdown="slides.md"
+          data-separator="^\n---\n$"
+          data-separator-vertical="^\n--\n$"
+        ></section>
+      </div>
     </div>
 
-    <!-- Scripts principais do Reveal.js -->
+    <!-- Reveal.js -->
+
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
-    <!-- Plugin para ler Markdown -->
+
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
-    <!-- Plugin para colorir códigos -->
+
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
-    
+
+    <!-- Mermaid -->
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin/plugin/mermaid/mermaid.js"></script>
+
+    <!-- Inicialização -->
+
     <script>
-        // Inicia a apresentação com os dois plugins ativados
-        Reveal.initialize({
-            plugins: [ RevealMarkdown, RevealHighlight ]
-        });
+      Reveal.initialize({
+        hash: true,
+        transition: "slide",
+        backgroundTransition: "fade",
+
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMermaid
+        ]
+      });
     </script>
-</body>
+  </body>
 </html>
