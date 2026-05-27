@@ -6,9 +6,9 @@
 
 # O Desafio Atual
 
-- **Cenário:** Alto volume de processos judiciais (**Série 1080**) na unidade FHEMIG/DIGEPE.
+- **Cenário:** Alto volume de processos judiciais na unidade FHEMIG/DIGEPE.
 - **Gargalo:** Elevado tempo gasto na triagem manual.
-- **Impacto:** Acúmulo de demandas e lentidão na análise de mérito por sobrecarga operacional.
+- **Impacto:** Acúmulo de demandas e lentidão na análise por sobrecarga operacional.
 
 ---
 
@@ -17,7 +17,7 @@
 ## "Operação em Background"
 
 - **O Problema:** Abrir o processo manualmente no SEI altera o status (de vermelho para preto).
-- **A Solução:** A automação utiliza a **API e Datalake** para extrair dados sem "tocar" na fila visual do técnico.
+- **A Solução:** A automação utilizar a **API e Datalake do SEI** para extrair dados sem "tocar" na fila visual do técnico.
 - **Resultado:** Organização preservada e cronologia de recebimento intacta.
 
 ---
@@ -28,23 +28,14 @@
 
 <div class="mermaid">
 flowchart LR
-    A[Datalake SEI] --> B[API SEI]
-    B --> C[Webscraping]
-    C --> D[(PostgreSQL)]
-    D --> E[Graph API]
-    E --> F[SharePoint/Email]
+    A(Monitoramento de Processos<br><br><strong>Datalake SEI</strong><br><br><br>) --> B(Geração de Links Externos<br><br><strong>API SEI</strong><br><br><br>)
+    B --> C(Extração de Documentos<br><br><strong>Python + Playwright</strong><br><br><br><br><br>)
+    C --> D[(Armazenamento de Dados<br><br><strong>Azure PostgreSQL</strong><br><br><br><br><br>)]
+    D --> E(Geração Automatizada de Planilhas<br><br><strong>Python + Pandas</strong><br><br><br><br><br><br>)
+    E --> F(Distribuição para Técnicos<br><br><strong>Microsoft Graph API</strong><br><br><br><br><br>)
 </div>
 
 </section>
-
----
-
-# Arquitetura Proposta
-
-1. **Identificação:** Captura em lote via Datalake.
-2. **Extração:** Geração de link externo via API.
-3. **Tratamento:** Armazenamento estruturado na Azure.
-4. **Entrega:** Planilha automatizada no SharePoint da equipe.
 
 ---
 
