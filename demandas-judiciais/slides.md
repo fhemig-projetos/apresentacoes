@@ -24,22 +24,26 @@
 
 <section data-auto-animate>
 
-# Fluxo da Automação (MVP)
+# Fluxo da Automação
+
+</section>
+
+<section data-auto-animate>
 
 <div class="mermaid">
 flowchart LR
-    A(Monitoramento de Processos<br><br><strong>Datalake SEI</strong><br><br><br>) --> B(Geração de Links Externos<br><br><strong>API SEI</strong><br><br><br>)
-    B --> C(Extração de Documentos<br><br><strong>Python + Playwright</strong><br><br><br><br><br>)
-    C --> D[(Armazenamento de Dados<br><br><strong>Azure PostgreSQL</strong><br><br><br><br><br>)]
-    D --> E(Geração Automatizada de Planilhas<br><br><strong>Python + Pandas</strong><br><br><br><br><br><br>)
-    E --> F(Distribuição para Técnicos<br><br><strong>Microsoft Graph API</strong><br><br><br><br><br>)
+    A(Listagem de Processos da unidade DIGEPE<br><br><strong>Datalake SEI</strong>) --> B(Geração de Links Externos<br><br><strong>API SEI</strong>)
+    B --> C(Extração de Documentos<br><br><strong>Python + Playwright</strong>)
+    C --> D[(Armazenamento de Dados<br><br><strong>Azure PostgreSQL</strong>)]
+    D --> E(Geração Automatizada de Planilhas<br><br><strong>Python + Pandas</strong>)
+    E --> F(Distribuição para Técnicos<br><br><strong>Microsoft Graph API</strong>)
 </div>
 
 </section>
 
 ---
 
-## Stack Tecnológica
+# Stack Tecnológica
 
 - **Linguagem:** Python (Playwright + Pandas)
 - **Hospedagem:** VM Linux dedicada (Azure)
@@ -48,11 +52,50 @@ flowchart LR
 
 ---
 
-# Viabilidade Financeira
+# Pleitos Técnicos (TI FHEMIG)
 
-- **Cota Mensal Azure (FHEMIG):** ~ R$ 65.912,00
-- **Consumo do MVP:** ~ R$ 2.000,00
+- **Ambiente:** Provisionamento de VM e Banco de Dados.
+- **API da Microsoft:** Registro da aplicação no Entra ID (geração de Client ID) com as devidas permissões.
+- **Envio de e-mails de forma impessoal:** Azure Communication Services.
+
+--
+
+## Solicitação de perfil com acesso ao Painel dos serviços Azure
+- Perfil com privilégios de **administração delegada** diretamente no painel do Microsoft Azure.
+- Perfil capaz de **Registrar Aplicação e criar VMs**.
+- **Agilidade e autonomia** para o desenvolvimento do projeto.
+- **Governança Preservada**: O Azure permite o uso de RBAC (Role-Based Access Control).
+
+> Em benchmarking com a TI da SEPLAG, foi demonstrado que é possível criar perfis com acesso a apenas determinados serviços dentro do Painel Admin Azure.
+
+--
+
+## Viabilidade Financeira
+
+- **Cota Mensal Azure (FHEMIG):** ~ R$ 65.912,00 em créditos azure.
+- **Consumo do MVP:** ~ R$ 2.000,00 
 - **Impacto:** Apenas **3%** do orçamento mensal disponível.
+- **Estimativas**: Pricing público da Microsoft e contrato FHEMIG/Microsoft.
+
+> O contrato corporativo do Estado garante custos efetivos ainda menores. 
+
+--
+
+## Detalhamento dos custos
+- **VM Linux**:  R$ 576,24
+- **Azure Database for PostgreSQL**: R$ 1331,75 + R$ 1,50 x total GB contratados
+    - Serviço de backup já incluso
+- **Microsoft Graph API**: sem custos (tanto o registro da aplicação, quanto a realização das requisições)
+
+--
+
+## Benchmarking SEPLAG
+- Benchmarking realizado junto à Diretoria de Desenvolvimento Tecnológico (SEPLAG/MG)
+- **Benchmarking SEPLAG:**
+  - **18 sistemas completos** (Homologação e Produção).
+  - Bancos de dados hospedados nas próprias VMs.
+  - Múltiplos ambientes de automação operando simultaneamente.
+  - **Custo Total da Diretoria (SEPLAG):** ~ R$ 18.000,00/mês.
 
 ---
 
@@ -60,32 +103,19 @@ flowchart LR
 
 | Recurso | Finalidade |
 | --- | --- |
-| **API SOAP SEI** | Geração de links externos e árvore processual |
-| **Datalake SEI** | Monitoramento massivo de processos 1080 |
-| **Datalake SISAP** | Cruzamento com dados funcionais (Fase 2) |
+| **API SOAP SEI** | Geração de links externos e construção da árvore processual |
+| **Datalake SEI** | Extração e monitoramento massivo de processos SEI |
+| **Datalake SISAP** | Cruzamento com dados funcionais |
 
----
-
-# Pleitos Técnicos (TI FHEMIG)
-
-- **Infraestrutura:** Provisionamento de VM e Banco de Dados.
-- **Identidade:** Registro no Entra ID (Client ID).
-- **Mensageria:** Liberação de Azure Communication Services.
-- **Segurança:** Configuração de Firewall para IPs de homologação.
+> E-mail para solicitação dos acessos já encaminhado e ofícios para solicitação já elaborados **(aguardando validação)**.
 
 ---
 
 # Perspectivas de Evolução
 
-- **Inteligência Artificial:** Análise semântica e sugestão de minutas em Markdown.
+- **Inteligência Artificial:** Análise semântica e sugestão de minutas.
 - **Integração SISAP:** Respostas instruídas automaticamente com dados funcionais.
-- **Automação Ativa:** Tramitação e assinatura via API SEI.
-
----
-
-# Conclusão
-
-> "A tecnologia liberta o técnico da burocracia para que ele possa exercer sua expertise na análise."
+- **Automação Ativa:** Construção dos documentos da árvore processual e tramitação dos Processos via API SEI.
 
 ---
 
@@ -93,7 +123,9 @@ flowchart LR
 
 ## Equipe RH+ Simples | DIGEPE - FHEMIG
 
-Liberações junto à TI
+
+
+<!-- Liberações junto à TI
 1. Infraestrutura de Hospedagem e Banco de Dados (Ecossistema Azure)
 Provisionamento de Máquina Virtual (VM)
 Serviço de Banco de Dados
@@ -117,4 +149,4 @@ Pedir o contrato.
 
 Reescrever o fluxo 
 
-Escrever sobre a necessidade das liberações de acesso junto à SEPLAG
+Escrever sobre a necessidade das liberações de acesso junto à SEPLAG -->

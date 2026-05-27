@@ -246,10 +246,32 @@
     <!-- Inicialização -->
 
     <script>
-      Reveal.initialize({
-        hash: true,
-        transition: "slide",
-        backgroundTransition: "fade",
+    Reveal.initialize({
+      hash: true,
+      transition: "slide",
+      backgroundTransition: "fade",
+
+      mermaid: {
+        theme: "base",
+
+        flowchart: {
+          useMaxWidth: false,
+          htmlLabels: true,
+          curve: "basis",
+          nodeSpacing: 120,
+          rankSpacing: 100,
+          padding: 25
+        },
+
+        themeVariables: {
+          primaryColor: "#d9f1fb",
+          primaryBorderColor: "#1296cc",
+          lineColor: "#38b6e8",
+          primaryTextColor: "#000000",
+          fontSize: "26px",
+          fontFamily: "Segoe UI"
+        }
+      },
 
         plugins: [
           RevealMarkdown,
